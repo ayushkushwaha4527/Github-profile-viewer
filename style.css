@@ -1,0 +1,257 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(45deg, #06beb6, #48b1bf, #ff6a00);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.firstDiv {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.firstDiv h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+input#userID {
+  padding: 12px;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  border: none;
+  width: 250px;
+  margin-right: 15px;
+  background-color: #ffffff70;
+  color: #333;
+  transition: all 0.3s ease;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+input#userID:focus {
+  outline: none;
+  box-shadow: 0 0 15px rgba(255, 105, 135, 0.8);
+}
+
+button#btn {
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  background-color: #ff6a00;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+button#btn:hover {
+  background-color: #ff3b3f;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.secondDiv {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 60%;
+  padding: 30px;
+  min-height: 60%;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(15px);
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeIn 0.6s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.userImg {
+  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border: 6px solid #fff;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.userImg:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.userDetail {
+  font-size: 1.3rem;
+  text-align: center;
+  margin-top: 20px;
+  color: #eee;
+}
+
+.userName {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.userBio {
+  font-size: 1.2rem;
+  color: #ddd;
+  font-style: italic;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.userFollow {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.Follower {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+}
+
+.repo {
+  font-size: 1.6rem;
+  text-align: center;
+  color: #f4f4f9;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.VisitProfile {
+  background-color: #ff6a00;
+  width: 80%;
+  height: 50px;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.VisitProfile:hover {
+  background-color: #ff3b3f;
+  transform: translateY(-4px);
+}
+
+.loader {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #FFF;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+.loader::after {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 5px solid transparent;
+  border-bottom-color: #FF3D00;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .secondDiv {
+    width: 90%;
+    padding: 25px;
+  }
+
+  .userName {
+    font-size: 2rem;
+  }
+
+  .repo {
+    font-size: 1.3rem;
+  }
+
+  .VisitProfile {
+    font-size: 1rem;
+    height: 45px;
+  }
+}
